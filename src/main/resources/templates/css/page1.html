@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <!--<link rel="stylesheet" type="text/css" href="../static/css/stylePage1.css" th:href="@{styles/css/stylePage1.css}" />-->
+    <link media="all" rel="stylesheet" th:href="@{/css/stylePage1.css}" type="text/css"/>
+    <title>Page1</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo">LoGo</div>
+                <nav class="nav">
+                    <a class="nav__link" th:href="@{#footer}">Контакты</a>
+                    <a class="nav__link" href="#">О нас</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="intro">
+        <div class="container">
+            <div class="intro__inner">
+                <h1 class="intro__title">
+                    Получите профессию будущего прямо сейчас
+                </h1>
+                <h2 class="intro_subtitle">
+                    Читайте теорию, изучайте темы по видео и оттачивайте свои знания на интересных упражнениях
+                </h2>
+                <a class="btn" th:href="@{/les1}">
+                    Начать обучение
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">
+                    Востребованная профессия
+                </h2>
+                <div class="section__text">
+                    <p>Java — один из самых популярных языков программирования в мире. На нём создают надёжные приложения для банков,
+                        IT-корпораций и стриминговых сервисов, разрабатывают интернет-магазины, игры и облачные решения. Java в своих
+                        продуктах используют: Twitter, Spotify, Госуслуги, Яндекс, Билайн, Сбер, платёжная система Мир. Игры Minecraft
+                        и Assassin’s Creed тоже написаны на Java.
+                    </p>
+                    <p>Java возможно выучить самостоятельно, но гораздо проще — на курсе с поддержкой опытного эксперта.
+                    </p>
+                </div>
+                <div class="about">
+                    <div class="about__item">
+                        <div class="about__text">
+                            <h2>2 000 вакансий</h2>
+                            <p>прямо сейчас доступно для Java-программистов на hh.ru</p>
+                        </div>
+                    </div>
+                    <div class="about__item">
+                        <div class="about__text">
+                            <h2>90 000 рублей</h2>
+                            <p>зарплата начинающего Java-разработчика, по данным hh.ru</p>
+                        </div>
+                    </div>
+                    <div class="about__item">
+                        <div class="about__text">
+                            <h2>3 миллиарда</h2>
+                            <p>устройств используют в качестве базового языка Java</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">
+                    Обучайся в удовольтвие
+                </h2>
+                <div class="section__text">
+                    <p>Мы создали уроки, чтобы помочь вам разобраться в парадигме объектно-оринтированного программирования на языке Java.
+                    </p>
+                </div>
+            </div>
+            <div class="about">
+                <div class="about__item">
+                    <div class="about__image">
+                        <img src="../static/images/page1/clock.jpg"
+                             th:src="@{images/page1/clock.jpg}">
+                        <h2>Время</h2>
+                        <p>Занимайтесь в удобное для вас время</p>
+                    </div>
+                </div>
+                <div class="about__item">
+                    <div class="about__image">
+                        <img src="../static/images/page1/sofa.jpg"
+                             th:src="@{images/page1/sofa.jpg}">
+                        <h2>Место</h2>
+                        <p>Учитесь откуда угодно - из дома, офиса или кафе</p>
+                    </div>
+                </div>
+                <div class="about__item">
+                    <div class="about__image">
+                        <img src="../static/images/page1/line.jpg"
+                             th:src="@{images/page1/line.jpg}">
+                        <h2>Эффективность</h2>
+                        <p>Наша задача – сделать так, чтобы вы сразу начали говорить.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="mobility__description">
+        <div class="container">
+            <div class="intro__inner">
+                <h1 class="intro__title">
+                    Что даёт профессия Java-разработчика
+                </h1>
+                <h2 class="intro_subtitle">
+                    Программист может работать удалённо. Всё, что ему нужно, это компьютер с&nbsp;подключением к интернету. Удалённая работа, свободный график — выбор многих, кто устал от офисной пятидневки. Вы сможете работать в компаниях по всему миру.
+                </h2>
+
+                <a class="btn" th:href="@{/les1}">
+                    Начать обучение
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <section class="section">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">
+                    Начать программировать - просто
+                </h2>
+                <div class="section__text">
+                    <p>Начни обучение прямо сейчас, чтобы не жалеть об этом в будущем
+                    </p>
+                </div>
+            </div>
+            <div class="about">
+                <div class="about__item">
+                    <div class="about__image">
+                        <img src="../static/images/page1/numberOne.jpg"
+                             th:src="@{images/page1/numberOne.jpg}">
+                        <h2>Регистрация</h2>
+                        <p>Зарегестрируйся, чтобы получить доступ к материалам</p>
+                    </div>
+                </div>
+                <div class="about__item">
+                    <div class="about__image">
+                        <img src="../static/images/page1/numberTwo.jpg"
+                             th:src="@{images/page1/numberTwo.jpg}">
+                        <h2>Обучение</h2>
+                        <p>Изучи все материалы и отработай их на учебных заданиях</p>
+                    </div>
+                </div>
+                <div class="about__item">
+                    <div class="about__image">
+                        <img src="../static/images/page1/numberThree.jpg"
+                             th:src="@{images/page1/numberThree.jpg}">
+                        <h2>Результат</h2>
+                        <p>По окончанию курса ты начнешь понимать принципы парадигмы ООП языка Java</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="footer">
+        <div class="container">
+            <nav>
+                <a th:href="@{https://github.com/floMaxter}"><img src="../static/images/page1/github.png"
+                                                                  th:src="@{images/page1/github.png}"></a>
+                <a th:href="@{https://vk.com/id262272811}"><img src="../static/images/page1/vk.png"
+                                                                th:src="@{images/page1/vk.png}"></a>
+                <a th:href="@{https://t.me/mv_flomaxter}"><img src="../static/images/page1/tg.png"
+                                                               th:src="@{images/page1/tg.png}"></a>
+            </nav>
+            <div class="header__logo">LoGo</div>
+        </div>
+    </footer>
+
+</body>
+</html>
