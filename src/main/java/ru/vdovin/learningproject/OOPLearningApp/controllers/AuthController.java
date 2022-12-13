@@ -40,7 +40,7 @@ public class AuthController {
                                       BindingResult bindingResult) {
         personValidator.validate(person, bindingResult);
 
-        if(bindingResult.hasErrors())
+        if (bindingResult.hasErrors())
             return "/auth/registration";
 
         registrationService.register(person);

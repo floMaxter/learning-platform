@@ -10,6 +10,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import ru.vdovin.learningproject.OOPLearningApp.security.CustomSuccessHandler;
 import ru.vdovin.learningproject.OOPLearningApp.services.PersonDetailsService;
 
 @EnableWebSecurity
@@ -30,16 +32,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/admin").hasRole("ADMIN")
                 .antMatchers("/auth/login", "/auth/registration", "/error", "/logo").permitAll()
                 .anyRequest().hasAnyRole("USER", "ADMIN")
-                /*.anyRequest().authenticated()*/
                 .and()
-                .formLogin().loginPage("/auth/login")
-                .loginProcessingUrl("/process_login")
-                .defaultSuccessUrl("/les1", true)
+                .formLogin()
+                    .loginPage("/auth/login")
+                    .loginProcessingUrl("/process_login")
+                    .successHandler(successHandler())
                 .failureUrl("/auth/login?error")
                 .and()
                 .logout()
                 .logoutUrl("/logout")
-                .logoutSuccessUrl("/auth/login");
+                .logoutSuccessUrl("/logo");
     }
 
     //Настраивает аутентификацию
@@ -60,5 +62,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public PasswordEncoder getPasswordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public AuthenticationSuccessHandler successHandler() {
+        return new CustomSuccessHandler();
     }
 }

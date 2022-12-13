@@ -1,186 +1,208 @@
 <!DOCTYPE html>
-  <html lang="ru" xmlns:th="http://thymeleaf.org">
-  <head>
+<html lang="ru" xmlns:th="http://thymeleaf.org">
+<head>
     <meta charset="UTF-8">
-    <!--<link th:href="@{/styles/css/stylePage4.css}" rel="stylesheet"/>-->
+    <link media="all" rel="stylesheet" th:href="@{/css/generalStyle.css}" type="text/css"/>
     <link media="all" rel="stylesheet" th:href="@{/css/stylePage5.css}" type="text/css"/>
     <title>Page5</title>
-  </head>
-  <body>
+</head>
+<body>
 
-  <header class="header">
+<header class="header">
     <div class="container">
-      <div class="header__inner">
-        <div class="header__logo">LoGo</div>
-        <nav class="nav">
-          <a class="nav__link" th:href="@{/logo}">Главная</a>
-          <a class="nav__link" href="#">Список заданий</a>
-          <a class="nav__link" th:href="@{#footer}">Контакты</a>
-          <a class="nav__link" href="#">О нас</a>
-        </nav>
-      </div>
+        <div class="header__inner">
+            <div class="header__logo">LoGo</div>
+            <form th:action="@{/logout}" th:method="POST">
+                <nav class="nav">
+                    <a class="nav__link" th:href="@{/logo}">Главная</a>
+                    <a class="nav__link" href="#">Список заданий</a>
+                    <a class="nav__link" th:href="@{#footer}">Контакты</a>
+                    <button class="nav__link" type="submit">Выйти</button>
+                </nav>
+            </form>
+        </div>
     </div>
-  </header>
+</header>
 
-  <div class="intro">
+<div class="intro">
     <div class="container">
-      <div class="intro__inner">
-        <h1 class="intro__title">
-          Конструкторы, поля и методы, сеттеры и геттеры.
-        </h1>
-        <h2 class="intro_subtitle">
-          Узнаем, как создавать объекты класса, как задавать и получать значения из приватных полей.
-        </h2>
-      </div>
+        <div class="intro__inner">
+            <h1 class="intro__title">
+                Конструкторы, поля и методы, сеттеры и геттеры.
+            </h1>
+            <h2 class="intro_subtitle">
+                Узнаем, как создавать объекты класса, как задавать и получать значения из приватных полей.
+            </h2>
+        </div>
     </div>
-  </div>
+</div>
 
-  <div class="container">
+<div class="container">
     <div class="main__text">
-      <h1>Основные понятия и определения.</h1>
-      <br/>
-      <h2>Поля и методы</h2>
-      <p>Функции, определнные внутри класса, называются <b>методами</b>, а данные, с которыми эти функции взаимодействуют, называются <b>полями</b>.</p>
-      <p>Любые функции и методы в классах могут быть помечены тремя модификаторами доступа:</p>
-      <ul>
-        <li>public</li>
-        <li>private</li>
-        <li>protected</li>
-      </ul>
-      <p>Модификатор <em>public</em> показывает, что поля или методы можно получить извне.</p>
-      <p>Модификатор <em>private</em>, наоборот, означает, что данные класса не могут быть получены другими объектами вне класса.</p>
-      <p>С модификатором <em>protected</em> дела обстоят не так просто, поэтому отложим его изучение на следующие уроки, где мы разберем основные парадигмы ООП.</p>
-      <p>Давайте вернемся к нашему классу Person и рассмотрим возвожные поля и методы этого класса</p>
-      <div class="block__text">
-        <div class="code__text">
-          public class Person {
-          <div class="text__indent">
-            public String name;
-            <br/>public int age;
-            <br/>private int height;					<br/>private int weight;
-            <br/>
-            <br/>public void sayHello() {
-            <div class="text__indent">System.out.println("Hello!");</div>
-            };
-            <br/>
-            <br/>private void sleep() {
-            <div class="text__indent">sleep();</div>};
-          </div>
-          };
-        </div>
-      </div>
-      <p>Как видно из примера, информацию о имени и возрасте человека может узнать любой желающий, а информацию роста и веса - нет. Кроме того, каждый человек может легко поздороваться с любым незнакомцем, а заставить его уснуть никто не может.</p>
-      <br/>
-      <h2>Конструкторы</h2>
-      <p>Для того, чтобы создать экземпляр класса, нам требуется вызвать особый метод, который называется <em>конструктором</em></p>
-      <p>Конструктор предназначен для инициализации объекта и вызывается автоматически при его создании. Ниже перечислены основные свойства конструкторов:</p>
-      <ul>
-        <li>Конструктор не возвращает значение, даже типа void. Нельзя получить указатель на конструктор.</li>
-        <li>Класс может иметь несколько конструкторов с разными параметрами для разных видов инициализации (при этом используется механизм перегрузки).</li>
-        <li>Конструктор, вызываемый без параметров, называется конструктором по умолчанию.</li>
-        <li>Параметры конструктора могут иметь любой тип, кроме этого же класса. Можно задавать значения параметров по умолчанию. Их может содержать только один из конструкторов.</li>
-        <li>Если программист не указал ни одного конструктора, компилятор создает его автоматически. Такой конструктор вызывает конструкторы по умолчанию для полей класса и конструкторы по умолчанию базовых классов. В случае, когда класс содержит константы или ссылки, при попытке создания объекта класса будет выдана ошибка, поскольку их необходимо инициализировать конкретными значениями, а конструктор по умолчанию этого делать не умеет.</li>
-        <li>Конструкторы не наследуются.</li>
-        <li>Конструкторы нельзя описывать с модификаторами const, virtual и static.</li>
-        <li>Для того, чтобы вызвать конструктор, необходимо написать конструкцию вида <em>new Person()</em></li>
-      </ul>
-      <p>Как это выглядит в коде:</p>
-      <div class="block__text">
-        <div class="code__text">
-          public class Person {
-          <div class="text__indent">
-            public String name;
-            <br/>public int age;
-            <br/>private int height;
-            <br/>private int weight;
-            <br/>
-            <br/>Person() {
-            <br/>
-            <br/>
-            };
-          </div>
-          };
-          <br/>
-          <br/>public static void class main(String[] args) {
-          <div class="text__indent">Person Tom = new Person();</div>
-          };
-        </div>
-      </div>
-      <p>Чаще всего конструктор используется для инициализации полей:</p>
-      <div class="block__text">
-        <div class="code__text">
-          public class Person {
-          <div class="text__indent">
-            public String name;
-            <br/>public int age;
-            <br/>private int height;
-            <br/>private int weight;
-            <br/>
-            <br/>Person(String name, int age, int height, int weight) {
-            <div class="text__indent">
-              this.name = name;
-              this.age = age;
-              this.height = height;
-              this.weight = weight;
+        <h1>Основные понятия и определения.</h1>
+        <br/>
+        <h2>Поля и методы</h2>
+        <p>Функции, определенные внутри класса, называются <b>методами</b>, а данные, с которыми эти функции
+            взаимодействуют, называются <b>полями</b>.</p>
+        <p>Любые функции и методы в классах могут быть помечены тремя модификаторами доступа:</p>
+        <ul>
+            <li>public</li>
+            <li>private</li>
+            <li>protected</li>
+        </ul>
+        <p>Модификатор <em>public</em> показывает, что поля или методы можно получить извне.</p>
+        <p>Модификатор <em>private</em>, наоборот, означает, что данные класса не могут быть получены другими объектами
+            вне класса.</p>
+        <p>С модификатором <em>protected</em> дела обстоят не так просто, поэтому отложим его изучение на следующие
+            уроки, где мы разберем основные парадигмы ООП.</p>
+        <p>Давайте вернемся к нашему классу Person и рассмотрим возможные поля и методы этого класса</p>
+        <div class="block__text">
+            <div class="code__text">
+                public class Person {
+                <div class="text__indent">
+                    public String name;
+                    <br/>public int age;
+                    <br/>private int height; <br/>private int weight;
+                    <br/>
+                    <br/>public void sayHello() {
+                    <div class="text__indent">System.out.println("Hello!");</div>
+                    };
+                    <br/>
+                    <br/>private void sleep() {
+                    <div class="text__indent">sleep();</div>
+                    };
+                </div>
+                };
             </div>
-            };
-          </div>
-          };
-          <br/>
-          <br/>public static void class main(String[] args) {
-          <div class="text__indent">Person Tom = new Person("Tom", 12, 165, 70);</div>
-          };
         </div>
-      </div>
-      <br/>
-      <h2>Геттеры и сеттеры</h2>
-      <p>Для того, чтобы иметь доступ к приватным полям класса, создаются специальные методы, именуемые <em>get()</em> и <em>set()</em>. Создадим эти методы для наших приватных полей:</p>
-      <div class="block__text">
-        <div class="code__text">
-          public class Person {
-          <div class="text__indent">
-            public String name;
-            <br/>public int age;
-            <br/>private int height;
-            <br/>private int weight;
-            <br/>
-            <br/>public int getHeight() {
-            <div class="text__indent">return height;</div>
-            };
-            <br/>public void setHeight(int height) {
-            <div class="text__indent">this.height = height;</div>};
-            <br/>public int getWeight() {
-            <div class="text__indent">return weight;</div>
-            };
-            <br/>public void setWeight(int height) {
-            <div class="text__indent">this.weight = weight;</div>};
-          </div>
-          };
+        <p>Как видно из примера, информацию об имени и возрасте человека может узнать любой желающий, а информацию о
+            росте и весе - нет. Кроме того, каждый человек может легко поздороваться с любым незнакомцем, а заставить
+            его уснуть никто не может.</p>
+        <br/>
+        <h2>Конструкторы</h2>
+        <p>Для того, чтобы создать экземпляр класса, нам требуется вызвать особый метод, который называется <em>конструктором</em>
+        </p>
+        <p>Конструктор предназначен для инициализации объекта и вызывается автоматически при его создании. Ниже
+            перечислены основные свойства конструкторов:</p>
+        <ul>
+            <li>Конструктор не возвращает значение, даже типа void. Нельзя получить указатель на конструктор.</li>
+            <li>Класс может иметь несколько конструкторов с разными параметрами для разных видов инициализации (при этом
+                используется механизм перегрузки).
+            </li>
+            <li>Конструктор, вызываемый без параметров, называется конструктором по умолчанию.</li>
+            <li>Параметры конструктора могут иметь любой тип, кроме этого же класса. Можно задавать значения параметров
+                по умолчанию. Их может содержать только один из конструкторов.
+            </li>
+            <li>Если программист не указал ни одного конструктора, компилятор создает его автоматически. Такой
+                конструктор вызывает конструкторы по умолчанию для полей класса и конструкторы по умолчанию базовых
+                классов. В случае, когда класс содержит константы или ссылки, при попытке создания объекта класса будет
+                выдана ошибка, поскольку их необходимо инициализировать конкретными значениями, а конструктор по
+                умолчанию этого делать не умеет.
+            </li>
+            <li>Конструкторы не наследуются.</li>
+            <li>Конструкторы нельзя описывать с модификаторами const, virtual и static.</li>
+            <li>Для того, чтобы вызвать конструктор, необходимо написать конструкцию вида <em>new Person()</em></li>
+        </ul>
+        <p>Как это выглядит в коде:</p>
+        <div class="block__text">
+            <div class="code__text">
+                public class Person {
+                <div class="text__indent">
+                    public String name;
+                    <br/>public int age;
+                    <br/>private int height;
+                    <br/>private int weight;
+                    <br/>
+                    <br/>Person() {
+                    <br/>
+                    <br/>
+                    };
+                </div>
+                };
+                <br/>
+                <br/>public static void class main(String[] args) {
+                <div class="text__indent">Person Tom = new Person();</div>
+                };
+            </div>
         </div>
-      </div>
-      <p>А теперь вам самим предстоит создать свой класс и прописать все поля, методы, сеттеры и геттеры для него.</p>
+        <p>Чаще всего конструктор используется для инициализации полей:</p>
+        <div class="block__text">
+            <div class="code__text">
+                public class Person {
+                <div class="text__indent">
+                    public String name;
+                    <br/>public int age;
+                    <br/>private int height;
+                    <br/>private int weight;
+                    <br/>
+                    <br/>Person(String name, int age, int height, int weight) {
+                    <div class="text__indent">
+                        this.name = name;
+                        this.age = age;
+                        this.height = height;
+                        this.weight = weight;
+                    </div>
+                    };
+                </div>
+                };
+                <br/>
+                <br/>public static void class main(String[] args) {
+                <div class="text__indent">Person Tom = new Person("Tom", 12, 165, 70);</div>
+                };
+            </div>
+        </div>
+        <br/>
+        <h2>Геттеры и сеттеры</h2>
+        <p>Для того, чтобы иметь доступ к приватным полям класса, создаются специальные методы, именуемые <em>get()</em>
+            и <em>set()</em>. Создадим эти методы для наших приватных полей:</p>
+        <div class="block__text">
+            <div class="code__text">
+                public class Person {
+                <div class="text__indent">
+                    public String name;
+                    <br/>public int age;
+                    <br/>private int height;
+                    <br/>private int weight;
+                    <br/>
+                    <br/>public int getHeight() {
+                    <div class="text__indent">return height;</div>
+                    };
+                    <br/>public void setHeight(int height) {
+                    <div class="text__indent">this.height = height;</div>
+                    };
+                    <br/>public int getWeight() {
+                    <div class="text__indent">return weight;</div>
+                    };
+                    <br/>public void setWeight(int height) {
+                    <div class="text__indent">this.weight = weight;</div>
+                    };
+                </div>
+                };
+            </div>
+        </div>
+        <p>А теперь вам самим предстоит создать свой класс и прописать все поля, методы, сеттеры и геттеры для него.</p>
     </div>
-  </div>
-  <div class="button">
+</div>
+<div class="button">
     <div class="container">
-      <a th:href="@{/les3}" class="button__prev">Предыдущий урок</a>
-      <a th:href="@{/les5}" class="button__next">Следующий урок</a>
+        <a th:href="@{/les3}" class="button__prev">Предыдущий урок</a>
+        <a th:href="@{/les5}" class="button__next">Следующий урок</a>
     </div>
-  </div>
+</div>
 
-  <footer class="footer" id="footer">
+<footer class="footer" id="footer">
     <div class="container">
-      <nav>
-        <a th:href="@{https://github.com/floMaxter}"><img src="../static/images/page1/github.png"
-                                                          th:src="@{images/page1/github.png}"></a>
-        <a th:href="@{https://vk.com/id262272811}"><img src="../static/images/page1/vk.png"
-                                                        th:src="@{images/page1/vk.png}"></a>
-        <a th:href="@{https://t.me/mv_flomaxter}"><img src="../static/images/page1/tg.png"
-                                                       th:src="@{images/page1/tg.png}"></a>
-      </nav>
-      <div class="header__logo">LoGo</div>
+        <nav>
+            <a th:href="@{https://github.com/floMaxter}" target="_blank"><img src="../static/images/page1/github.png"
+                                                                              th:src="@{images/page1/github.png}"></a>
+            <a th:href="@{https://vk.com/id262272811}" target="_blank"><img src="../static/images/page1/vk.png"
+                                                                            th:src="@{images/page1/vk.png}"></a>
+            <a th:href="@{https://t.me/mv_flomaxter}" target="_blank"><img src="../static/images/page1/tg.png"
+                                                                           th:src="@{images/page1/tg.png}"></a>
+        </nav>
+        <div class="header__logo">LoGo</div>
     </div>
-  </footer>
+</footer>
 
-  </body>
-  </html>
+</body>
+</html>

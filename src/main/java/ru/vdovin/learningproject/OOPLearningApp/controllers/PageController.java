@@ -11,6 +11,11 @@ public class PageController {
         return "css/page1";
     }
 
+    @GetMapping("/admin")
+    public String showPageAdmin() {
+        return "css/adminPage";
+    }
+
     @GetMapping("/les1")
     public String showPage2() {
         return "css/page2";
@@ -31,7 +36,7 @@ public class PageController {
         return "css/page5";
     }
 
-    @GetMapping("les5")
+    @GetMapping("/les5")
     public String showPage6() {
         return "css/page6";
     }

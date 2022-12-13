@@ -1,44 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="ru" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Registration</title>
+    <title>Login page</title>
     <link media="all" rel="stylesheet" th:href="@{/css/styleLogin.css}" type="text/css"/>
 </head>
 <body>
 
-<!--<form th:method="POST" th:action="@{/auth/registration}" th:object="${person}">
-    <label for="username">Enter username: </label>
-    <input type="text" th:field="*{username}" id="username"/>
-    <div style="color:red" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username Error</div>
-    <br/>
-    <label for="yearOfBirth">Enter year of birth: </label>
-    <input type="text" th:field="*{yearOfBirth}" id="yearOfBirth"/>
-    <div style="color:red" th:if="${#fields.hasErrors('yearOfBirth')}" th:errors="*{yearOfBirth}">Year of birth Error
-    </div>
-    <br/>
-    <label for="password">Enter password: </label>
-    <input type="password" th:field="*{password}" id="password"/>
-    <div style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</div>
-    <br/>
-    <input type="submit" value="Sign up!"/>
-</form>-->
-
 <div class="login-page">
     <div class="form">
-        <form class="register-form" th:method="POST" th:action="@{/auth/registration}" th:object="${person}">
-            <input type="text" placeholder="username" th:field="*{username}" id="username"/>
-            <div style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</div>
-
-            <input type="text" placeholder="year of Birth" th:field="*{yearOfBirth}" id="yearOfBirth"/>
+        <form th:method="POST" th:action="@{/auth/registration}" th:object="${person}">
+            <input type="text" th:field="*{username}" placeholder="username"/>
+            <div style="color:red" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username Error</div>
+            <br/>
+            <input type="text" th:field="*{yearOfBirth}" placeholder="year of birth"/>
             <div style="color:red" th:if="${#fields.hasErrors('yearOfBirth')}" th:errors="*{yearOfBirth}">Year of birth Error
             </div>
-
-            <input type="password" placeholder="password" th:field="*{password}" id="password"/>
+            <br/>
+            <input type="password" th:field="*{password}" placeholder="year of birth"/>
             <div style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</div>
             <br/>
-
-            <!--<input type="text" placeholder="email address"/>-->
             <button>create</button>
             <p class="message">Already registered? <a th:href="@{/auth/login}">Sign In</a></p>
         </form>
