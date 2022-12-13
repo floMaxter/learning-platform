@@ -1,6 +1,7 @@
 package ru.vdovin.learningproject.OOPLearningApp.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
@@ -22,6 +23,11 @@ public class Person {
     @Column(name = "year_of_birth")
     private int yearOfBirth;
 
+    @NotEmpty(message = "Email should not be empty")
+    @Email(message = "Email should be valid")
+    @Column(name = "email")
+    private String email;
+
     @Column(name = "password")
     private String password;
 
@@ -32,9 +38,10 @@ public class Person {
     }
 
 
-    public Person(String username, int yearOfBirth) {
+    public Person(String username, int yearOfBirth, String email) {
         this.username = username;
         this.yearOfBirth = yearOfBirth;
+        this.email = email;
     }
 
     public int getId() {
@@ -57,6 +64,10 @@ public class Person {
         return role;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -75,6 +86,10 @@ public class Person {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override

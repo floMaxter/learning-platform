@@ -17,7 +17,11 @@
             <div style="color:red" th:if="${#fields.hasErrors('yearOfBirth')}" th:errors="*{yearOfBirth}">Year of birth Error
             </div>
             <br/>
-            <input type="password" th:field="*{password}" placeholder="year of birth"/>
+            <input type="text" th:field="*{email}" placeholder="email"/>
+            <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error
+            </div>
+            <br/>
+            <input type="password" th:field="*{password}" placeholder="password"/>
             <div style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</div>
             <br/>
             <button>create</button>

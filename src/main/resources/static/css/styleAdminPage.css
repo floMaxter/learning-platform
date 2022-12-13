@@ -9,7 +9,7 @@
     letter-spacing: 3px;
 
     background: linear-gradient(to top, rgba(17, 203, 245, 0.5), rgba(17, 203, 245, 0.5)),
-    url("../images/adminImage.jpg") center no-repeat fixed;
+    url("../images/adminPage.png") center no-repeat fixed;
     -webkit-background-size: cover;
 }
 

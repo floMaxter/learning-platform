@@ -27,23 +27,23 @@
     <div class="container">
         <div class="intro__inner">
             <h1 class="intro__title">
-                Вводное занятие.
+                Страничка администратора
             </h1>
-            <h2 class="intro_subtitle">
-                Знакомство с курсом, его основными положениями, языком программирования и средой разработки.
-            </h2>
         </div>
     </div>
 </div>
 
 <div class="container">
     <div class="main__text">
+        <div th:each="person : ${people}">
+            <a th:href="@{/administrator/people/{id}(id=${person.getId()})}"
+               th:text="${person.getUsername() + ', ' + person.getYearOfBirth() + ', ' + person.getEmail()}">user</a>
+        </div>
 
-    </div>
-</div>
-<div class="button">
-    <div class="container">
-        <a th:href="@{/les2}" class="button__next">Следующий урок</a>
+        <br/>
+        <hr/>
+        <!--кнопка создания нового человека-->
+        <a href="/administrator/people/new">Create new person</a>
     </div>
 </div>
 

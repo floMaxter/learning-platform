@@ -13,7 +13,7 @@ public class PageController {
 
     @GetMapping("/admin")
     public String showPageAdmin() {
-        return "css/adminPage";
+        return "redirect:/administrator/people";
     }
 
     @GetMapping("/les1")
