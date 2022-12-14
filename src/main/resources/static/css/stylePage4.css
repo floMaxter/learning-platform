@@ -43,3 +43,12 @@
     border-radius: 15px;
     box-shadow: 0 0 10px #000;
 }
+
+.nav button {
+    outline: none; /* Для синий ободки */
+    border: 0;
+    background: transparent;
+
+    font-size: 14px;
+    text-transform: uppercase;
+}

@@ -40,4 +40,9 @@ public class PageController {
     public String showPage6() {
         return "css/page6";
     }
+
+    @GetMapping("/lessons")
+    public String listAllLessons() {
+        return "css/listAllLessons";
+    }
 }

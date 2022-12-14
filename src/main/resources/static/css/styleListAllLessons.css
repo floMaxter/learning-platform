@@ -1,0 +1,56 @@
+/*Intro*/
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 100%;
+    height: 50vh;
+    letter-spacing: 3px;
+
+    background: linear-gradient(to top, rgba(17, 203, 245, 0.5), rgba(17, 203, 245, 0.5)),
+    url("../images/introForHeadTheory.jpg") center no-repeat fixed;
+    -webkit-background-size: cover;
+}
+
+.nav button {
+    outline: none; /* Для синий ободки */
+    border: 0;
+    background: transparent;
+
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+table {
+    height: 100%;
+    width: 100%;
+
+    margin-bottom: 30px;
+
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif, serif;
+    font-size: 22px;
+    border-collapse: collapse;
+    text-align: center;
+}
+th, td:first-child {
+    background: #0f87ab;
+    color: white;
+    padding: 10px 20px;
+}
+th, td {
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: white;
+}
+td {
+    background: #57d4fa;
+}
+th:first-child, td:first-child {
+    text-align: left;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
