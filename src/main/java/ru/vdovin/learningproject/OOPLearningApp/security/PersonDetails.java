@@ -3,7 +3,7 @@ package ru.vdovin.learningproject.OOPLearningApp.security;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import ru.vdovin.learningproject.OOPLearningApp.models.Person;
+import ru.vdovin.learningproject.OOPLearningApp.models.person.Person;
 
 import java.util.Collection;
 import java.util.Collections;

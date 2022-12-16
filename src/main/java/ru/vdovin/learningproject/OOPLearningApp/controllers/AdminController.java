@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import ru.vdovin.learningproject.OOPLearningApp.models.Person;
+import ru.vdovin.learningproject.OOPLearningApp.models.person.Person;
 import ru.vdovin.learningproject.OOPLearningApp.services.AdminService;
 
 import javax.validation.Valid;

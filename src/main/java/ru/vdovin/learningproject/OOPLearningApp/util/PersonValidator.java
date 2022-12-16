@@ -5,7 +5,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
-import ru.vdovin.learningproject.OOPLearningApp.models.Person;
+import ru.vdovin.learningproject.OOPLearningApp.models.person.Person;
 import ru.vdovin.learningproject.OOPLearningApp.services.PersonDetailsService;
 
 @Component

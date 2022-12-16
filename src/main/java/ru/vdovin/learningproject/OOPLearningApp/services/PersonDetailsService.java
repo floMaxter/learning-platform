@@ -5,8 +5,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import ru.vdovin.learningproject.OOPLearningApp.models.Person;
-import ru.vdovin.learningproject.OOPLearningApp.repositories.PeopleRepository;
+import ru.vdovin.learningproject.OOPLearningApp.models.person.Person;
+import ru.vdovin.learningproject.OOPLearningApp.repositories.people.PeopleRepository;
 import ru.vdovin.learningproject.OOPLearningApp.security.PersonDetails;
 
 import java.util.Optional;

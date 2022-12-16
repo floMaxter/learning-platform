@@ -3,8 +3,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.vdovin.learningproject.OOPLearningApp.models.Person;
-import ru.vdovin.learningproject.OOPLearningApp.repositories.PeopleRepository;
+import ru.vdovin.learningproject.OOPLearningApp.models.person.Person;
+import ru.vdovin.learningproject.OOPLearningApp.repositories.people.PeopleRepository;
 
 import java.util.List;
 import java.util.Optional;

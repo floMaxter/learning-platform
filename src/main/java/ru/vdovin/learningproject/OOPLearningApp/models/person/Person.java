@@ -1,4 +1,4 @@
-package ru.vdovin.learningproject.OOPLearningApp.models;
+package ru.vdovin.learningproject.OOPLearningApp.models.person;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
