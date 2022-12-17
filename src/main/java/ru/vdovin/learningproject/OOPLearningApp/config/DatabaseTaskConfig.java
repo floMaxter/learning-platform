@@ -23,18 +23,18 @@ import java.util.HashMap;
         basePackages = DatabasePersonConfig.JPA_REPOSITORY_PACKAGE
 )
 @Configuration
-public class DatabasePersonConfig {
+public class DatabaseTaskConfig {
     private final Environment environment;
-    public static final String PROPERTY_PREFIX = "app.dbsecurity.datasource";
-    public static final String JPA_REPOSITORY_PACKAGE = "ru.vdovin.learningproject.OOPLearningApp.repositories.people";
-    public static final String ENTITY_PACKAGE = "ru.vdovin.learningproject.OOPLearningApp.models.person";
-    public static final String ENTITY_MANAGER_FACTORY = "dbsecurityEntityManagerFactory";
-    public static final String DATA_SOURCE = "dbsecurityDataSource";
-    public static final String DATABASE_PROPERTY = "dbsecurityDatabaseProperty";
-    public static final String TRANSACTION_MANAGER = "dbsecurityTransactionManager";
+    public static final String PROPERTY_PREFIX = "app.dbtask.datasource";
+    public static final String JPA_REPOSITORY_PACKAGE = "ru.vdovin.learningproject.OOPLearningApp.repositories.task";
+    public static final String ENTITY_PACKAGE = "ru.vdovin.learningproject.OOPLearningApp.models.task";
+    public static final String ENTITY_MANAGER_FACTORY = "dbtaskEntityManagerFactory";
+    public static final String DATA_SOURCE = "dbtaskDataSource";
+    public static final String DATABASE_PROPERTY = "dbtaskDatabaseProperty";
+    public static final String TRANSACTION_MANAGER = "dbtaskTransactionManager";
 
     @Autowired
-    public DatabasePersonConfig(Environment environment) {
+    public DatabaseTaskConfig(Environment environment) {
         this.environment = environment;
     }
 
@@ -68,10 +68,9 @@ public class DatabasePersonConfig {
         em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
 
         final HashMap<String, Object> properties = new HashMap<>();
-        */
-/*properties.put("javax.persistence.validation.mode", "none");
+properties.put("javax.persistence.validation.mode", "none");
         properties.put("hibernate.hbm2ddl.auto", "update");
-        properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");*//*
+        properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
 
         properties.put("hibernate.dialect", environment.getRequiredProperty("hibernate.dialect"));
         properties.put("hibernate.show_sql", environment.getRequiredProperty("hibernate.show_sql"));
