@@ -7,14 +7,15 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 import ru.vdovin.learningproject.OOPLearningApp.models.person.Person;
 import ru.vdovin.learningproject.OOPLearningApp.services.PersonDetailsService;
+import ru.vdovin.learningproject.OOPLearningApp.services.PersonRegistrationService;
 
 @Component
 public class PersonValidator implements Validator {
-    private final PersonDetailsService personDetailsService;
+    private final PersonRegistrationService personRegistrationService;
 
     @Autowired
-    public PersonValidator(PersonDetailsService personDetailsService) {
-        this.personDetailsService = personDetailsService;
+    public PersonValidator(PersonRegistrationService personRegistrationService) {
+        this.personRegistrationService = personRegistrationService;
     }
 
     @Override
@@ -26,13 +27,10 @@ public class PersonValidator implements Validator {
     public void validate(Object target, Errors errors) {
         Person person = (Person) target;
 
-        //TODO: добавить отдельный сервия для проверки
         try {
-            personDetailsService.loadUserByUsername(person.getUsername());
+            personRegistrationService.isUserExists(person.getUsername());
         } catch (UsernameNotFoundException ignored) {
-            return; // все хорошо, пользователь не найден
+            errors.rejectValue("username", "", "Person with that name already exists");
         }
-
-        errors.rejectValue("username", "", "Person with that name already exists");
     }
 }

@@ -11,6 +11,10 @@ import java.util.Collections;
 public class PersonDetails implements UserDetails {
     private final Person person;
 
+    public PersonDetails() {
+        person = new Person();
+    }
+
     public PersonDetails(Person person) {
         this.person = person;
     }
