@@ -1,22 +1,12 @@
 package ru.vdovin.learningproject.OOPLearningApp.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import ru.vdovin.learningproject.OOPLearningApp.repositories.task.TaskRepository;
 
 @Controller
-@RequestMapping("/logo")
 public class PageController {
-    private final TaskRepository taskRepository;
 
-    @Autowired
-    public PageController(TaskRepository taskRepository) {
-        this.taskRepository = taskRepository;
-    }
-
-    @GetMapping()
+    @GetMapping("/logo")
     public String helloPage1() {
         return "css/page1";
     }
