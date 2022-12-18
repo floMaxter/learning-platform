@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@PreAuthorize("hasRole('ROLE_ADMIN') and hasRole('ROLE_SOME_OTHER')")
+@PreAuthorize("hasRole('ROLE_ADMIN')")
 public class AdminService {
     private final PeopleRepository peopleRepository;
 
