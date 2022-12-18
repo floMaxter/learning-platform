@@ -38,29 +38,37 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="main__text">
-            <h2>Задания:</h2>
-            <ol>
-                <li>Создайте класс с названием Car.</li>
-                <li>У класса Car должны быть приватные поля brand, model, yearOfEdition, mileage.</li>
-                <li>Класс должен содержать конструктор без параметров и конструктор с параметрами для всех полей.</li>
-                <li>В классе должны быть определены сеттеры и геттеры для всех полей.</li>
-            </ol>
+    <form th:method="POST" th:action="@{/les5}" th:object="${task}">
+        <div class="container">
+            <div class="main__text">
+                <h2>Задания:</h2>
+                <ol>
+                    <li>Создайте класс с названием Car.</li>
+                    <li>У класса Car должны быть приватные поля brand, model, yearOfEdition, mileage.</li>
+                    <li>Класс должен содержать конструктор без параметров и конструктор с параметрами для всех полей.</li>
+                    <li>В классе должны быть определены сеттеры и геттеры для всех полей.</li>
+                </ol>
 
-            <div class="block__text">
-                <textarea cols="3" rows="2" class="textarea__text"></textarea>
+                <div class="block__text">
+                    <!--<textarea cols="3" rows="2" class="textarea__text"></textarea>-->
+                    <input type="text" th:field="*{answers}"/>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="button">
-        <div class="container">
-            <a th:href="@{/les4}" class="button__prev">Предыдущий урок</a>
-            <a class="button__center">Проверить</a>
-            <a th:href="@{/les6}" class="button__next">Следующий урок</a>
+        <div>
+            <input type=""/>
         </div>
-    </div>
+
+        <div class="button">
+            <div class="container">
+                <a th:href="@{/les4}" class="button__prev">Предыдущий урок</a>
+                <!--<a class="button__center">Проверить</a>-->
+                <input type="submit" value="Проверить"/>
+                <a th:href="@{/les6}" class="button__next">Следующий урок</a>
+            </div>
+        </div>
+    </form>
 
     <footer class="footer" id="footer">
         <div class="container">
