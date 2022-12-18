@@ -131,8 +131,15 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 1;
 }
 
-/*Button*/
+/*Wrapper*/
+.wrapper {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
+/*Button*/
 .button {
     margin-top: 50px;
     margin-bottom: 150px;
@@ -187,7 +194,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav button {
-    outline: none; /* Для синий ободки */
+    outline: none;
     border: 0;
     background: transparent;
 
@@ -226,10 +233,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /*Footer*/
 .footer {
+    margin-top: auto;
+
     width: 100%;
     height: 200px;
     background-color: #858487;
-    margin: 0 auto;
     text-align: center;
     padding-top: 25px;
 }

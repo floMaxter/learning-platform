@@ -1,13 +1,11 @@
 package ru.vdovin.learningproject.OOPLearningApp.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import ru.vdovin.learningproject.OOPLearningApp.services.AdminService;
 
 @Controller
 public class PageController {
+
     @GetMapping("/logo")
     public String helloPage1() {
         return "css/page1";

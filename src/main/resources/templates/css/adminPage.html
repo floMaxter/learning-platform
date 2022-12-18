@@ -6,59 +6,63 @@
     <link media="all" rel="stylesheet" th:href="@{/css/styleAdminPage.css}" type="text/css"/>
     <title>Admin page</title>
 </head>
-<header class="header">
+<body>
+
+<div class="wrapper">
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo">LoGo</div>
+                <form th:action="@{/logout}" th:method="POST">
+                    <nav class="nav">
+                        <a class="nav__link" th:href="@{/logo}">Главная</a>
+                        <a class="nav__link" th:href="@{/lessons}">Список заданий</a>
+                        <a class="nav__link" th:href="@{#footer}">Контакты</a>
+                        <button class="nav__link" type="submit">Выйти</button>
+                    </nav>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <div class="intro">
+        <div class="container">
+            <div class="intro__inner">
+                <h1 class="intro__title">
+                    Страничка администратора
+                </h1>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
-        <div class="header__inner">
+        <div class="main__text">
+            <div th:each="person : ${people}">
+                <a th:href="@{/administrator/people/{id}(id=${person.getId()})}"
+                   th:text="${person.getUsername() + ', ' + person.getYearOfBirth() + ', ' + person.getEmail()}">user</a>
+            </div>
+
+            <br/>
+            <hr/>
+            <!--кнопка создания нового человека-->
+            <a href="/administrator/people/new">Create new person</a>
+        </div>
+    </div>
+
+    <footer class="footer" id="footer">
+        <div class="container">
+            <nav>
+                <a th:href="@{https://github.com/floMaxter}" target="_blank"><img src="../static/images/page1/github.png"
+                                                                                  th:src="@{images/page1/github.png}"></a>
+                <a th:href="@{https://vk.com/id262272811}" target="_blank"><img src="../static/images/page1/vk.png"
+                                                                                th:src="@{images/page1/vk.png}"></a>
+                <a th:href="@{https://t.me/mv_flomaxter}" target="_blank"><img src="../static/images/page1/tg.png"
+                                                                               th:src="@{images/page1/tg.png}"></a>
+            </nav>
             <div class="header__logo">LoGo</div>
-            <form th:action="@{/logout}" th:method="POST">
-                <nav class="nav">
-                    <a class="nav__link" th:href="@{/logo}">Главная</a>
-                    <a class="nav__link" href="#">Список заданий</a>
-                    <a class="nav__link" th:href="@{#footer}">Контакты</a>
-                    <button class="nav__link" type="submit">Выйти</button>
-                </nav>
-            </form>
         </div>
-    </div>
-</header>
-
-<div class="intro">
-    <div class="container">
-        <div class="intro__inner">
-            <h1 class="intro__title">
-                Страничка администратора
-            </h1>
-        </div>
-    </div>
+    </footer>
 </div>
-
-<div class="container">
-    <div class="main__text">
-        <div th:each="person : ${people}">
-            <a th:href="@{/administrator/people/{id}(id=${person.getId()})}"
-               th:text="${person.getUsername() + ', ' + person.getYearOfBirth() + ', ' + person.getEmail()}">user</a>
-        </div>
-
-        <br/>
-        <hr/>
-        <!--кнопка создания нового человека-->
-        <a href="/administrator/people/new">Create new person</a>
-    </div>
-</div>
-
-<footer class="footer" id="footer">
-    <div class="container">
-        <nav>
-            <a th:href="@{https://github.com/floMaxter}" target="_blank"><img src="../static/images/page1/github.png"
-                                                                              th:src="@{images/page1/github.png}"></a>
-            <a th:href="@{https://vk.com/id262272811}" target="_blank"><img src="../static/images/page1/vk.png"
-                                                                            th:src="@{images/page1/vk.png}"></a>
-            <a th:href="@{https://t.me/mv_flomaxter}" target="_blank"><img src="../static/images/page1/tg.png"
-                                                                           th:src="@{images/page1/tg.png}"></a>
-        </nav>
-        <div class="header__logo">LoGo</div>
-    </div>
-</footer>
 
 </body>
 </html>

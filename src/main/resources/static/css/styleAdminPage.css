@@ -13,11 +13,6 @@
     -webkit-background-size: cover;
 }
 
-.nav button {
-    outline: none; /* Для синий ободки */
-    border: 0;
-    background: transparent;
-
-    font-size: 14px;
-    text-transform: uppercase;
+.footer {
+    margin-top: auto;
 }
