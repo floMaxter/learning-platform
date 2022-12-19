@@ -3,20 +3,21 @@ package ru.vdovin.learningproject.OOPLearningApp.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import ru.vdovin.learningproject.OOPLearningApp.models.task.Task;
-import ru.vdovin.learningproject.OOPLearningApp.services.TaskService;
+import ru.vdovin.learningproject.OOPLearningApp.util.TaskValidator;
 
 @Controller
 public class PageController {
 
-    private final TaskService taskService;
+    private final TaskValidator taskValidator;
 
     @Autowired
-    public PageController(TaskService taskService) {
-        this.taskService = taskService;
+    public PageController(TaskValidator taskValidator) {
+        this.taskValidator = taskValidator;
     }
 
     @GetMapping("/logo")
@@ -57,13 +58,17 @@ public class PageController {
     }
 
     @PostMapping("/les5")
-    public String checkExercisePage6(@ModelAttribute("task") Task task, Model model) {
-        Task taskFromBd = taskService.findByName("page6");
+    public String checkExercisePage6(@ModelAttribute("task") Task task,
+                                     BindingResult bindingResult) {
+        task.setName("page6");
 
-        if(taskFromBd.getAnswers().equals(task.getAnswers()))
-            return "css/result";
+        taskValidator.validate(task, bindingResult);
+        taskValidator.validateAnswer(task, bindingResult);
 
-        return "css/page6";
+        if(bindingResult.hasErrors())
+            return "css/page6";
+
+        return "css/result";
     }
 
     @GetMapping("/lessons")

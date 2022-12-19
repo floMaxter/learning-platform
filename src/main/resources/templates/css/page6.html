@@ -50,21 +50,23 @@
                 </ol>
 
                 <div class="block__text">
-                    <!--<textarea cols="3" rows="2" class="textarea__text"></textarea>-->
-                    <input type="text" th:field="*{answers}"/>
+                    <textarea cols="3" rows="2" class="textarea__text" th:field="*{answers}"></textarea>
                 </div>
             </div>
         </div>
 
-        <div>
-            <input type=""/>
+        <div class="container">
+            <div class="text__exception">
+                <div style="color:red" th:if="${#fields.hasErrors('answers')}" th:errors="*{answers}">Answers Error</div>
+                <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
+            </div>
         </div>
 
         <div class="button">
             <div class="container">
                 <a th:href="@{/les4}" class="button__prev">Предыдущий урок</a>
                 <!--<a class="button__center">Проверить</a>-->
-                <input type="submit" value="Проверить"/>
+                <input class="button__center" type="submit" value="Проверить"/>
                 <a th:href="@{/les6}" class="button__next">Следующий урок</a>
             </div>
         </div>
