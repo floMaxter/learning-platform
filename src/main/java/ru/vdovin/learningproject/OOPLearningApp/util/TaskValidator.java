@@ -50,4 +50,7 @@ public class TaskValidator implements Validator {
             errors.rejectValue("answers", "", ex.getMessage());
         }
     }
+
+    public void validateTest(Object target, Errors errors) {
+    }
 }

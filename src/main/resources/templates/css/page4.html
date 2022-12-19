@@ -38,70 +38,67 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="main__text">
-
-            <form th:method="POST">
-
-            </form>
-
-            <p>1. Что такое ООП?</p>
-            <div class="block__test">
-                <input type="checkbox" value="yes">Язык программирования</input>
-                <br/>
-                <input type="checkbox" value="yes">Методология программирования</input>
-                <br/>
-                <input type="checkbox" value="yes">Способ оформления текста</input>
-                <br/>
-                <input type="checkbox" value="yes">Способ общения между методами и полями</input>
-            </div>
-
-            <p>2. Как называется функция внутри класса?</p>
-            <div class="block__test">
-                <input type="checkbox" value="yes">Аргумент</input>
-                <br/>
-                <input type="checkbox" value="yes">Параметр</input>
-                <br/>
-                <input type="checkbox" value="yes">Метод</input>
-                <br/>
-                <input type="checkbox" value="yes">Производная</input>
-            </div>
-
-            <p>3. Что такое интерфейс класса?</p>
-            <div class="block__test">
-                <input type="checkbox" value="yes">Набор методов класса, которые доступны для использования из
-                вне</input>
-                <br/>
-                <input type="checkbox" value="yes">Набор методов класса, которые доступны только для внутренних полей и
-                методов</input>
-                <br/>
-                <input type="checkbox" value="yes">Набор полей класса, которые доступны для использования из вне</input>
-                <br/>
-                <input type="checkbox" value="yes">Набор методов класса, которые доступны для только для внутренних
-                полей и
-                методов</input>
-            </div>
-
-            <p>4. Что такое объект класса?</p>
-            <div class="block__test">
-                <input type="checkbox" value="yes">Сам класс</input>
-                <br/>
-                <input type="checkbox" value="yes">Отдельный представитель класса</input>
-                <br/>
-                <input type="checkbox" value="yes">Класс, который использует данный определенного класса</input>
-                <br/>
-                <input type="checkbox" value="yes">Данные внутри класса</input>
-            </div>
-        </div>
-    </div>
-
-    <div class="button">
+    <form th:method="POST" th:action="@{/les3}">
         <div class="container">
-            <a th:href="@{/les2}" class="button__prev">Предыдущий урок</a>
-            <a class="button__center">Проверить</a>
-            <a th:href="@{/les4}" class="button__next">Следующий урок</a>
+            <div class="main__text">
+                <p>1. Что такое ООП?</p>
+                <div class="block__test">
+                    <input type="checkbox" value="yes">Язык программирования</input>
+                    <br/>
+                    <input type="checkbox" value="yes">Методология программирования</input>
+                    <br/>
+                    <input type="checkbox" value="yes">Способ оформления текста</input>
+                    <br/>
+                    <input type="checkbox" value="yes">Способ общения между методами и полями</input>
+                </div>
+
+                <p>2. Как называется функция внутри класса?</p>
+                <div class="block__test">
+                    <input type="checkbox" value="yes">Аргумент</input>
+                    <br/>
+                    <input type="checkbox" value="yes">Параметр</input>
+                    <br/>
+                    <input type="checkbox" value="yes">Метод</input>
+                    <br/>
+                    <input type="checkbox" value="yes">Производная</input>
+                </div>
+
+                <p>3. Что такое интерфейс класса?</p>
+                <div class="block__test">
+                    <input type="checkbox" value="yes">Набор методов класса, которые доступны для использования из
+                    вне</input>
+                    <br/>
+                    <input type="checkbox" value="yes">Набор методов класса, которые доступны только для внутренних полей и
+                    методов</input>
+                    <br/>
+                    <input type="checkbox" value="yes">Набор полей класса, которые доступны для использования из вне</input>
+                    <br/>
+                    <input type="checkbox" value="yes">Набор методов класса, которые доступны для только для внутренних
+                    полей и
+                    методов</input>
+                </div>
+
+                <p>4. Что такое объект класса?</p>
+                <div class="block__test">
+                    <input type="checkbox" value="yes">Сам класс</input>
+                    <br/>
+                    <input type="checkbox" value="yes">Отдельный представитель класса</input>
+                    <br/>
+                    <input type="checkbox" value="yes">Класс, который использует данный определенного класса</input>
+                    <br/>
+                    <input type="checkbox" value="yes">Данные внутри класса</input>
+                </div>
+            </div>
         </div>
-    </div>
+
+        <div class="button">
+            <div class="container">
+                <a th:href="@{/les2}" class="button__prev">Предыдущий урок</a>
+                <input class="button__center" type="submit" value="Проверить"/>
+                <a th:href="@{/les4}" class="button__next">Следующий урок</a>
+            </div>
+        </div>
+    </form>
 
     <footer class="footer" id="footer">
         <div class="container">

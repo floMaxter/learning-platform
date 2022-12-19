@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import ru.vdovin.learningproject.OOPLearningApp.models.task.Task;
+import ru.vdovin.learningproject.OOPLearningApp.models.task.Test;
 import ru.vdovin.learningproject.OOPLearningApp.util.TaskValidator;
 
 @Controller
@@ -43,6 +44,21 @@ public class PageController {
     @GetMapping("/les3")
     public String showPage4() {
         return "css/page4";
+    }
+
+    @PostMapping("/les3")
+    public String checkExercisePage4(@ModelAttribute("test") Test test,
+                                     @ModelAttribute("task") Task task,
+                                     BindingResult bindingResult) {
+        task.setName("page4");
+
+        taskValidator.validate(task, bindingResult);
+        taskValidator.validateTest(test, bindingResult);
+
+        if(bindingResult.hasErrors())
+            return "css/page4";
+
+        return "redirect:/les4";
     }
 
     @GetMapping("/les4")
