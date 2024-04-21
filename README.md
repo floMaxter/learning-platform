@@ -6,7 +6,7 @@ Web application for learning the basics of OOP with Spring.
 #### 1. Clone the application
     git clone https://github.com/floMaxter/learning-platform
     cd learning-platform
-#### 2. Change MySQL username and password
+#### 2. Change PostgreSQL username and password
 * Open ```src/main/resources/application.properties```.
 * Change ```spring.datasource.username``` and ```spring.datasource.password as per your PostgreSQL installation```.
 
